@@ -1,3 +1,13 @@
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import moment from 'moment';
+import { of } from 'rxjs';
+import { catchError, switchMap } from 'rxjs/operators';
+import { AccountDetailsService } from 'src/app/core/services/accountDetails/account-details.service';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class GetAccountDetailsResolver implements Resolve<any[]> {
   constructor(private accountDetailsService: AccountDetailsService) {}
 
